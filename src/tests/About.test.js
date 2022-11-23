@@ -1,14 +1,11 @@
 import React from 'react';
 import { screen } from '@testing-library/react';
-// import userEvent from '@testing-library/user-event';
-// import { act } from 'react-dom/test-utils';
 import renderWithRouter from './renderWithRouter';
 import About from '../pages/About';
 
 describe('2. Teste o componente <About.js />, se a página contém as informações sobre a Pokédex', () => {
   it('Teste se a página contém um heading h2 com o texto About Pokédex', () => {
     renderWithRouter(<About />);
-    /* expect(history.location.pathname).toBe('/about'); */
 
     const titleAboutPokédex = screen.getByRole('heading', { name: /about pokédex/i });
     expect(titleAboutPokédex).toBeInTheDocument();
